@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
     target_sr = args.sr
 
-    train = pd.read_csv("train.csv")
+    train = pd.read_csv("xeno_canto_sounds_germany.csv")
     dfs = []
     for i in range(args.n_splits):
         if i == args.n_splits - 1:
