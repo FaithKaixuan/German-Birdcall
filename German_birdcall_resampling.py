@@ -10,7 +10,7 @@ from joblib import delayed, Parallel
 
 
 def resample(df: pd.DataFrame, target_sr: int):
-    audio_dir = Path("train_audio")
+    audio_dir = Path("/")
     resample_dir = Path("Germany_Birdcall_resampled")
     resample_dir.mkdir(exist_ok=True, parents=True)
     warnings.simplefilter("ignore")
