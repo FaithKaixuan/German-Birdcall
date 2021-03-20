@@ -6,6 +6,6 @@ primary_labels = os.listdir( path )
 i = 0
 BIRD_CODE = []
 for gen in primary_labels:
-  BIRD_CODE.append({gen: i})
+  BIRD_CODE.append(gen: i)
   i = i + 1
 print(BIRD_CODE)
