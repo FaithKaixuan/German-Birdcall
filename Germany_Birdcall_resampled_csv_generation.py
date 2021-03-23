@@ -1,5 +1,15 @@
 import os, sys
 import pandas as pd
+
+def countFile(dir): 
+    tmp = 0
+    for item in os.listdir(dir):
+        if os.path.isfile(os.path.join(dir, item)):
+            tmp += 1
+        else:
+            tmp += countFile(os.path.join(dir, item))
+    return tmp
+
 train_csv = pd.DataFrame(columns = ["gen","sp","filename"])
 path = "/mnt/GermanyBirdcall/Germany_Birdcall_resampled"
 Dropping_Threshold = 10
@@ -21,13 +31,3 @@ for gen in primary_labels:
               i = i + 1
 train_csv.to_csv('Germany_Birdcall_resampled_filtered.csv', index=False)
 print(BIRD_CODE)
-
-
-def countFile(dir): 
-    tmp = 0
-    for item in os.listdir(dir):
-        if os.path.isfile(os.path.join(dir, item)):
-            tmp += 1
-        else:
-            tmp += countFile(os.path.join(dir, item))
-    return tmp
